@@ -1,148 +1,161 @@
 # CMP INSTITUTIONAL MANUAL
 
-## Version 2.0 - Modular Professional Framework
+## Version 2.1 - Fully Optimized Framework
 
-============================================================ DOCUMENT
-CONTROL ============================================================
+====================================================================
+DOCUMENT CONTROL
+====================================================================
 
-  Field             Value
-  ----------------- -------------------------------------------
-  System Name       CMP (Candle Model Process)
-  Version           2.0
-  Classification    Institutional Price Action Framework
-  Architecture      Multi-Timeframe Structural Reaction Model
-  Core Components   Structure / Execution / Risk / Psychology
+  Field            Value
+  ---------------- -------------------------------------------------------
+  System Name      CMP (Candle Model Process)
+  Version          2.1
+  Classification   Institutional Structural Price Action Framework
+  Architecture     Multi-Timeframe Reaction Model
+  Core Modules     Structure / Execution / Risk / Psychology
+  Edge Formula     HTF Location + Correct Cycle Start + MTF Confirmation
 
-============================================================ SYSTEM
-OVERVIEW ============================================================
+====================================================================
+SYSTEM PHILOSOPHY
+====================================================================
 
-CMP is a reaction-based structural framework built on:
+CMP is a reaction-based structural framework.
 
--   OHLC-defined Support & Resistance zones
--   Engulfing (EG) structural events
--   Break of Structure (BO) confirmations
--   Multi-timeframe validation
+Price moves between validated OHLC Support and Resistance zones. Price
+tests liquidity before continuation or reversal. Structure is confirmed
+by body close - not by wicks.
 
-CMP does not predict. CMP reads structural transitions between liquidity
-zones.
+CMP does not predict direction. CMP reads structural transitions between
+liquidity zones.
 
-============================================================ MASTER FLOW
-MAP ============================================================
+  --------------------------------------------------------------------
+                          MARKET BEHAVIOR LAW
+  --------------------------------------------------------------------
+                          2\. OHLC ZONE MODEL
 
-HTF Context (Story Line) ↓ Direction Layer ↓ Structure Formation (EG) ↓
-Break of Structure (BO) ↓ Execution Trigger ↓ Risk Control ↓ Trade
-Management
+  Support Zone = Low -\> Open (bullish candle) Resistance Zone = High
+                       -\> Open (bearish candle)
 
-============================================================ MODULE I -
-STRUCTURE ============================================================
+  Wick = liquidity Body close = acceptance Zones are areas, not lines.
+  --------------------------------------------------------------------
 
-1.  Timeframe Architecture
+3.  EXTENDED OHLC LOGIC
 
-  Layer        Timeframe       Function
-  ------------ --------------- --------------------------
-  Story Line   D / W / M       Macro narrative
-  Direction    H1 / H4         Intraday bias
-  Execution    M1 / M5 / M15   Precision & confirmation
+Zone expands when:
 
-Principle: Upper TF = context Lower TF = precision
+1)  Candle breaks the zone
+2)  Candle closes inside the zone
 
-  ------------------------------------------------------------
-  2\. OHLC Zone Model
-  ------------------------------------------------------------
-  3\. Extended Zone Logic
+Resistance expansion: - Bearish candle creates new High - Body close
+remains inside resistance zone
 
-  Break -\> Close Inside -\> Zone Expands
+Support expansion: - Bullish candle creates new Low - Body close remains
+inside support zone
 
-  Applies to: EH, EL, IH, IL, HH, LL, IntH, IntL
-  ------------------------------------------------------------
+Applies to: EH, EL, IH, IL, HH, LL, IntH, IntL
 
-4.  Structural Hierarchy
+  ----------------------------------------------------------------------
+  4\. STRUCTURAL HIERARCHY
+  ----------------------------------------------------------------------
+  5\. STRUCTURAL EVENTS
 
-External Structure:
+  Engulfing (EG)
 
-  Trend       Active   Creating
-  ----------- -------- ----------
-  Uptrend     EL       HH
-  Downtrend   EH       LL
+  Bearish EG: Body close \< bullish Low
 
-Internal Structure:
+  Bullish EG: Body close \> bearish High
 
-  Context   Active   Creating
-  --------- -------- ----------
-  UP        IL       IntH
-  DOWN      IH       IntL
+  EG Role: - Tests structural zones - Creates new external if missing -
+  Establishes directional pressure toward next RB - Enables early Market
+  Shift detection
 
-Rule: High/Low that causes BO and creates new HH/LL becomes EH/EL (or
-IH/IL internally).
+  EG is prerequisite, not entry.
 
-  ------------------------------------------------------------
-  5\. Structural Event Definitions
-  ------------------------------------------------------------
-  2\. Road Block (RB)
+  Break of Structure (BO)
 
-  RB = previous EH / EL / IH / IL
+  UP: Bullish close \> HH zone highest bearish High
 
-  MTF Principle:
+  DOWN: Bearish close \< LL zone lowest bullish Low
 
-  Higher TF RB -\> Target Lower TF Confirmation -\> Entry
+  BO Types
 
-  Max relevant RBs: 3
-  ------------------------------------------------------------
+  \| Type \| Meaning \| \|------\|----------\| \| BOS \| Continuation \|
+  \| MS \| Market Shift \|
 
-3.  Execution Flow
+  BO Strength Model:
 
-Identify HTF Context ↓ Confirm Direction (H1/H4) ↓ Wait for EG at zone ↓
-Confirm BO (lower TF) ↓ Enter at structural confirmation ↓ Set risk
-beyond structural invalidation
+  Strength increases when: - Close depth extends beyond zone width -
+  Follow-through candle confirms momentum - Impulse range exceeds recent
+  average range
 
-============================================================ MODULE
-III - RISK MANAGEMENT
-============================================================
+  ====================================================================
+  MODULE II - EXECUTION
+  ====================================================================
 
-1.  Risk Philosophy
+  1\. CMP CONFIRMATION CHAIN
 
-Risk is defined structurally, not emotionally. Invalidation = structural
-break of premise.
+  M1 BO -\> M5 EG -\> M5 BO -\> M15 EG -\> M15 BO -\> H1 EG -\> H1 BO
 
-  ------------------------------------------------------------
-  2\. Stop Placement
-  ------------------------------------------------------------
-  3\. Position Logic
+  Rules: 1. BO valid only if fresh EG exists one TF higher. 2. EG valid
+  only if BO occurs one TF lower. 3. No isolated signals.
+  ----------------------------------------------------------------------
 
-  Position size determined by:
+2.  ROAD BLOCK (RB)
 
-  \- Structural clarity - HTF alignment strength -
-  Risk-to-Reward vs next RB
-  ------------------------------------------------------------
+RB = previous EH / EL / IH / IL
 
-4.  Trade Lifecycle
+Functions: - Reaction area - Target location - Potential reversal zone
 
-Entry ↓ Structural Confirmation ↓ Risk Protection ↓ Target = Next RB /
-HTF Zone ↓ Exit
+MTF Rule: Higher TF RB = Target Lower TF confirmation = Entry
 
-============================================================ MODULE IV -
-TRADER PSYCHOLOGY
-============================================================
+Maximum focus: 3 active RBs.
 
-1.  Core Psychological Principles
+  --------------------------------------------------------------------
+  3\. EXECUTION FLOW
+  --------------------------------------------------------------------
+  2\. STOP PLACEMENT
 
-2.  No prediction bias.
+  Stop must be: - Beyond EH/EL/IH/IL invalidation - Outside liquidity
+  sweep zone - Outside extended zone expansion
+  --------------------------------------------------------------------
 
-3.  No emotional reaction to wicks.
+3.  TARGET LOGIC
 
-4.  Only body close confirms structure.
+Primary target = Next higher timeframe RB. Secondary target = Extended
+zone objective.
 
-5.  Patience until full CMP chain forms.
+Risk-to-Reward must justify structural clarity.
 
-6.  No forcing trades between zones.
+  ----------------------------------------------------------------------
+  4\. TRADE LIFECYCLE
 
-------------------------------------------------------------------------
+  Entry ↓ Structural confirmation ↓ Risk protected ↓ Approach next RB ↓
+  Exit or trail
 
-2.  Discipline Model
+  ====================================================================
+  MODULE IV - TRADER PSYCHOLOGY
+  ====================================================================
 
-Wait for Context ↓ Wait for Location ↓ Wait for Structure ↓ Wait for
-Confirmation ↓ Execute ↓ Manage
+  1\. CORE PRINCIPLES
 
-============================================================
+  1\. No prediction bias. 2. Wicks do not confirm structure. 3. Only
+  body close confirms structure. 4. Patience until full CMP chain forms.
+  5. No trades between zones without structural confirmation.
+  ----------------------------------------------------------------------
 
-CMP Institutional Manual - Version 2.0
+2.  DISCIPLINE FLOW
+
+Context ↓ Location ↓ Structure ↓ Confirmation ↓ Execution ↓ Management
+
+==================================================================== CMP
+EDGE EQUATION
+====================================================================
+
+Edge = HTF Location + Correct CMP Cycle Start + MTF Confirmation
+
+Without correct location, no edge exists. Without full chain
+confirmation, no execution.
+
+====================================================================
+
+CMP Institutional Manual - Version 2.1
