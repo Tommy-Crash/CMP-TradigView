@@ -1,278 +1,148 @@
-# CMP METODOLOOGIA
+# CMP INSTITUTIONAL MANUAL
 
-## Struktureeritud ja Parandatud Versioon (v1.1)
+## Version 2.0 - Modular Professional Framework
 
-------------------------------------------------------------------------
+============================================================ DOCUMENT
+CONTROL ============================================================
 
-# 1. STRATEEGIA OLEMUS
+  Field             Value
+  ----------------- -------------------------------------------
+  System Name       CMP (Candle Model Process)
+  Version           2.0
+  Classification    Institutional Price Action Framework
+  Architecture      Multi-Timeframe Structural Reaction Model
+  Core Components   Structure / Execution / Risk / Psychology
 
-**Fookus:** Price action Support- ja Resistance-alade vahel.
+============================================================ SYSTEM
+OVERVIEW ============================================================
 
-**Eesmärk:**\
-- Mõista, kus hind asub\
-- Mõista, kust hind tuli\
-- Mõista, mis põhjustas viimase reaktsiooni
+CMP is a reaction-based structural framework built on:
 
-> Hind liigub S/R-alade vahel neid testides.\
-> Me ei ennusta --- me loeme reaktsiooni.
+-   OHLC-defined Support & Resistance zones
+-   Engulfing (EG) structural events
+-   Break of Structure (BO) confirmations
+-   Multi-timeframe validation
 
-------------------------------------------------------------------------
+CMP does not predict. CMP reads structural transitions between liquidity
+zones.
 
-# 2. AJARAAMIDE HIERARHIA
+============================================================ MASTER FLOW
+MAP ============================================================
 
-  Kiht         Ajaraam       Roll
-  ------------ ------------- -----------------------------------
-  Story Line   D -- W -- M   Suur pilt (swing-narratiiv)
-  Direction    H1 -- H4      Päevasisene suund
-  CMP          M1 -- M15     Hetkestruktuur ja tehingu teostus
+HTF Context (Story Line) ↓ Direction Layer ↓ Structure Formation (EG) ↓
+Break of Structure (BO) ↓ Execution Trigger ↓ Risk Control ↓ Trade
+Management
 
-**Põhimõte:**\
-Ülemine kiht annab konteksti.\
-Alumine kiht annab täpsuse.
+============================================================ MODULE I -
+STRUCTURE ============================================================
 
-------------------------------------------------------------------------
+1.  Timeframe Architecture
 
-# 3. CMP KINNITUSE AHELG
+  Layer        Timeframe       Function
+  ------------ --------------- --------------------------
+  Story Line   D / W / M       Macro narrative
+  Direction    H1 / H4         Intraday bias
+  Execution    M1 / M5 / M15   Precision & confirmation
 
-CMP toimib järjestusena, mitte üksiksündmusena.
+Principle: Upper TF = context Lower TF = precision
 
-    M1 BO → M5 EG → M5 BO → M15 EG → M15 BO → H1 EG → H1 BO
+  ------------------------------------------------------------
+  2\. OHLC Zone Model
+  ------------------------------------------------------------
+  3\. Extended Zone Logic
 
-## Reeglid
+  Break -\> Close Inside -\> Zone Expands
 
-1.  BO on kehtiv ainult siis, kui 1 TF kõrgemal on värske EG.\
-2.  EG on kehtiv ainult siis, kui 1 TF madalamal toimub BO.\
-3.  Ajaraamid peavad üksteist kinnitama.\
-4.  Iseseisvaid signaale ei kasutata.
+  Applies to: EH, EL, IH, IL, HH, LL, IntH, IntL
+  ------------------------------------------------------------
 
-------------------------------------------------------------------------
+4.  Structural Hierarchy
 
-# 4. OHLC SUPPORT & RESISTANCE (ALUS)
+External Structure:
 
-S/R põhineb alati OHLC-andmetel.\
-S/R ei ole joon --- see on ala.
+  Trend       Active   Creating
+  ----------- -------- ----------
+  Uptrend     EL       HH
+  Downtrend   EH       LL
 
-## 4.1 Support (Bullish küünal)
+Internal Structure:
 
-**Support-ala = Low → Open**
+  Context   Active   Creating
+  --------- -------- ----------
+  UP        IL       IntH
+  DOWN      IH       IntL
 
--   Alumine wick = likviidsus\
--   Keha = aktsepteerimine\
--   Close = tugevam kui wick
+Rule: High/Low that causes BO and creates new HH/LL becomes EH/EL (or
+IH/IL internally).
 
-## 4.2 Resistance (Bearish küünal)
+  ------------------------------------------------------------
+  5\. Structural Event Definitions
+  ------------------------------------------------------------
+  2\. Road Block (RB)
 
-**Resistance-ala = High → Open**
+  RB = previous EH / EL / IH / IL
 
--   Ülemine wick = likviidsus\
--   Keha = aktsepteerimine\
--   Close = tugevam kui wick
+  MTF Principle:
 
-------------------------------------------------------------------------
+  Higher TF RB -\> Target Lower TF Confirmation -\> Entry
 
-# 5. EXTENDED OHLC S/R
+  Max relevant RBs: 3
+  ------------------------------------------------------------
 
-Ala laieneb, kui „õige suunaline" küünal:
+3.  Execution Flow
 
-1.  Läbib ala\
-2.  Sulgub tsooni sees
+Identify HTF Context ↓ Confirm Direction (H1/H4) ↓ Wait for EG at zone ↓
+Confirm BO (lower TF) ↓ Enter at structural confirmation ↓ Set risk
+beyond structural invalidation
 
-## 5.1 Resistance laieneb, kui:
+============================================================ MODULE
+III - RISK MANAGEMENT
+============================================================
 
--   Bearish küünal teeb uue kõrgema High\
--   Body close jääb resistance-tsooni sisse
+1.  Risk Philosophy
 
-## 5.2 Support laieneb, kui:
+Risk is defined structurally, not emotionally. Invalidation = structural
+break of premise.
 
--   Bullish küünal teeb uue madalama Low\
--   Body close jääb support-tsooni sisse
+  ------------------------------------------------------------
+  2\. Stop Placement
+  ------------------------------------------------------------
+  3\. Position Logic
 
-**Reegel:**\
-Õige suund + sulgumine tsoonis = ala laieneb.
+  Position size determined by:
 
-Laieneda võivad: EH, EL, IH, IL, HH, LL, IntH, IntL.
+  \- Structural clarity - HTF alignment strength -
+  Risk-to-Reward vs next RB
+  ------------------------------------------------------------
 
-------------------------------------------------------------------------
+4.  Trade Lifecycle
 
-# 6. STRUKTUUR
+Entry ↓ Structural Confirmation ↓ Risk Protection ↓ Target = Next RB /
+HTF Zone ↓ Exit
 
-## 6.1 External Struktuur
+============================================================ MODULE IV -
+TRADER PSYCHOLOGY
+============================================================
 
-  Trend       Aktiivne   Loodav
-  ----------- ---------- --------
-  Uptrend     EL         HH
-  Downtrend   EH         LL
+1.  Core Psychological Principles
 
-**Reegel:**\
-L/H, mis tekitab BO ja loob uue HH/LL, muutub EH/EL-iks.
+2.  No prediction bias.
 
-HH/LL tähistavad ajaloolisi BO-jooni ja likviidsuspiirkondi.
+3.  No emotional reaction to wicks.
 
-------------------------------------------------------------------------
+4.  Only body close confirms structure.
 
-## 6.2 Internal Struktuur
+5.  Patience until full CMP chain forms.
 
-Internal struktuur on sama oluline kui external.
-
-  Kontekst   Aktiivne   Loodav
-  ---------- ---------- --------
-  UP         IL         IntH
-  DOWN       IH         IntL
-
-**Reegel:**\
-L/H, mis tekitab internal BO ja loob uue IntH/IntL, muutub IH/IL-iks.
-
-HL/LH termineid ei kasutata.
-
-------------------------------------------------------------------------
-
-# 7. ENGULFING (EG)
-
-EG on OHLC ja struktuuri kombinatsioon.
-
-## 7.1 Bearish EG (EH / IH / SEG)
-
--   Bullish küünal engulfed\
--   Bearish body close \< bullish Low
-
-## 7.2 Bullish EG (EL / IL / BEG)
-
--   Bearish küünal engulfed\
--   Bullish body close \> bearish High
-
-## EG roll
-
--   Testib olemasolevaid tasemeid\
--   Loob uue external taseme (kui puudub)\
--   Võimaldab varajast Market Shift (MS) tuvastamist\
--   Aitab määrata targetit
-
-EG ei ole entry-signaal.\
-EG on eeltingimus.
+6.  No forcing trades between zones.
 
 ------------------------------------------------------------------------
 
-# 8. ROAD BLOCK (RB)
+2.  Discipline Model
 
-RB = iga eelnev EH/EL või IH/IL.
+Wait for Context ↓ Wait for Location ↓ Wait for Structure ↓ Wait for
+Confirmation ↓ Execute ↓ Manage
 
-## Roll
+============================================================
 
--   Reaktsiooniala\
--   Entry või target\
--   Potentsiaalne pöördekoht
-
-## MTF põhimõte
-
--   1 TF kõrgem RB = tavaliselt target\
--   Entry tuleb madalamalt TF-lt\
--   Target leitakse kõrgemalt
-
-Olulised on maksimaalselt 3 RB-d.
-
-------------------------------------------------------------------------
-
-# 9. BREAK OF STRUCTURE (BO)
-
-CMP arvestab ainult body close'i.
-
-## 9.1 UP
-
-Bullish close \> HH-ala kõrgeim bearish High
-
-## 9.2 DOWN
-
-Bearish close \< LL-ala madalaim bullish Low
-
-## BO tüübid
-
-  Tüüp   Tähendus
-  ------ ------------------------------------
-  BOS    Struktuuri murdumine trendi suunas
-  MS     EH/EL murdumine (suunamuutus)
-
-## BO tugevus sõltub
-
--   Body close'i ulatus\
--   Momentum\
--   Jätkuvus
-
-------------------------------------------------------------------------
-
-# 10. CMP JA BIAS
-
-Bias on oluline, kuid otsustav on:
-
-> Kas uus CMP-tsükkel algab õiges HTF-asukohas?
-
-Oluline ei ole ainult suund ---\
-oluline on tsükli alguspositsioon kõrgema ajaraami kontekstis.
-
-------------------------------------------------------------------------
-
-# 11. MÄNGUPLAAN
-
-Enne entry't küsi:
-
-1.  Mis on Story Line?\
-2.  Mis on Direction?\
-3.  Kus hind asub S/R suhtes?\
-4.  Mis põhjustas viimase reaktsiooni?\
-5.  Kus asub järgmine RB / HTF target?
-
-  Küsimus                     Vastus
-  --------------------------- -----------------------------------------
-  Story Line                  D-W-M kontekst
-  Direction                   H1-H4 suund
-  Kust hind tuli              Eelmine S/R ja viimane reaktsioon
-  Mis põhjustas reaktsiooni   EG, RB-test, HTF-tase, Extended S/R
-  Kus hind on                 Praeguse S/R-ala suhtes
-  Kuhu võib minna             Järgmine RB / HTF target / Extended ala
-
-------------------------------------------------------------------------
-
-# 12. VÕTMEPUNKTID
-
-  \#   Põhimõte
-  ---- --------------------------------------------------
-  1    Kolm kihti: Story Line → Direction → CMP
-  2    CMP kinnituse ahel töötab järjestusena
-  3    OHLC määrab alad
-  4    S/R on ala, mitte joon
-  5    Extended OHLC S/R laieneb tsoonis sulgumisel
-  6    Body close on otsustav
-  7    EG + BO loovad struktuuri
-  8    External ja Internal järgivad sama loogikat
-  9    RB on reaktsiooniala
-  10   Bias ilma õigesti algava tsüklita ei anna eelist
-
-------------------------------------------------------------------------
-
-# 13. TÄIENDAVAD TUVASTAMISED (TULEVIKU MUDEL)
-
-  -----------------------------------------------------------------------
-  Nähtus                              Märkus
-  ----------------------------------- -----------------------------------
-  Stop Hunt / Liquidity Sweep         Wick läbib taseme, body close jääb
-                                      tsooni
-
-  OHLC-ala kinnitamine                Hind sulgub S/R-alas
-                                      (aktsepteerimine)
-
-  OHLC-ala testimine                  Wick puudutab ala, sulgub
-                                      vastassuunas
-
-  Extended OHLC S/R                   Ala laieneb õige suunaga sulgumisel
-
-  Pullback'i sügavus                  Mõõdetav
-
-  Protected H/L murdumine või sweep   Mõõdetav
-
-  AOI                                 Area of Interest -- viimase
-                                      aktiivse external range
-                                      reaktsioonialad
-  -----------------------------------------------------------------------
-
-------------------------------------------------------------------------
-
-CMP Metodoloogia v1.1 -- Struktureeritud ja Parandatud Dokumentatsioon
+CMP Institutional Manual - Version 2.0
