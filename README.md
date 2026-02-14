@@ -1,161 +1,265 @@
-# CMP INSTITUTIONAL MANUAL
+# CMP Institutional Manual
 
-## Version 2.1 - Fully Optimized Framework
+## Version 2.2 -- Professional Edition
 
-====================================================================
-DOCUMENT CONTROL
-====================================================================
+------------------------------------------------------------------------
+
+## Document Control
 
   Field            Value
   ---------------- -------------------------------------------------------
   System Name      CMP (Candle Model Process)
-  Version          2.1
+  Version          2.2
   Classification   Institutional Structural Price Action Framework
   Architecture     Multi-Timeframe Reaction Model
   Core Modules     Structure / Execution / Risk / Psychology
   Edge Formula     HTF Location + Correct Cycle Start + MTF Confirmation
 
-====================================================================
-SYSTEM PHILOSOPHY
-====================================================================
+------------------------------------------------------------------------
 
-CMP is a reaction-based structural framework.
+## System Philosophy
 
-Price moves between validated OHLC Support and Resistance zones. Price
-tests liquidity before continuation or reversal. Structure is confirmed
-by body close - not by wicks.
+CMP is a reaction-based structural framework built on OHLC-defined
+zones.
 
-CMP does not predict direction. CMP reads structural transitions between
-liquidity zones.
+Price moves between validated Support and Resistance areas.\
+Liquidity is taken before continuation or reversal.\
+Acceptance is confirmed only by body close.
 
-  --------------------------------------------------------------------
-                          MARKET BEHAVIOR LAW
-  --------------------------------------------------------------------
-                          2\. OHLC ZONE MODEL
+CMP does not predict direction.\
+CMP reads structural transitions between liquidity zones.
 
-  Support Zone = Low -\> Open (bullish candle) Resistance Zone = High
-                       -\> Open (bearish candle)
+### Market Behavior Law
 
-  Wick = liquidity Body close = acceptance Zones are areas, not lines.
-  --------------------------------------------------------------------
+-   Price oscillates between confirmed OHLC zones\
+-   Liquidity is swept before structural continuation\
+-   Body close confirms structural validity
 
-3.  EXTENDED OHLC LOGIC
+------------------------------------------------------------------------
+
+## Master Flow Model
+
+HTF Context (Story Line)\
+↓\
+Directional Bias (H1/H4)\
+↓\
+Location at Valid S/R\
+↓\
+Engulfing Event (EG)\
+↓\
+Break of Structure (BO)\
+↓\
+Execution\
+↓\
+Risk Control\
+↓\
+Target = Next RB
+
+------------------------------------------------------------------------
+
+# Module I --- Structure
+
+## 1. Timeframe Architecture
+
+  Layer        Timeframe       Function
+  ------------ --------------- ----------------------------
+  Story Line   D / W / M       Macro structural narrative
+  Direction    H1 / H4         Intraday bias
+  Execution    M1 / M5 / M15   Structural precision
+
+Upper timeframe defines context.\
+Lower timeframe defines confirmation.
+
+## 2. OHLC Zone Model
+
+Support Zone = Low → Open (bullish candle)\
+Resistance Zone = High → Open (bearish candle)
+
+-   Wick = liquidity\
+-   Body close = acceptance\
+-   Zones are areas, not lines
+
+## 3. Extended OHLC Logic
 
 Zone expands when:
 
-1)  Candle breaks the zone
-2)  Candle closes inside the zone
+1.  Candle breaks the zone\
+2.  Candle closes inside the zone
 
-Resistance expansion: - Bearish candle creates new High - Body close
-remains inside resistance zone
+**Resistance expansion** - Bearish candle forms new High\
+- Body close remains inside resistance zone
 
-Support expansion: - Bullish candle creates new Low - Body close remains
-inside support zone
+**Support expansion** - Bullish candle forms new Low\
+- Body close remains inside support zone
 
-Applies to: EH, EL, IH, IL, HH, LL, IntH, IntL
+Applies to: EH, EL, IH, IL, HH, LL, IntH, IntL.
 
-  ----------------------------------------------------------------------
-  4\. STRUCTURAL HIERARCHY
-  ----------------------------------------------------------------------
-  5\. STRUCTURAL EVENTS
+## 4. Structural Hierarchy
 
-  Engulfing (EG)
+### External Structure
 
-  Bearish EG: Body close \< bullish Low
+  Trend       Active   Creating
+  ----------- -------- ----------
+  Uptrend     EL       HH
+  Downtrend   EH       LL
 
-  Bullish EG: Body close \> bearish High
+### Internal Structure
 
-  EG Role: - Tests structural zones - Creates new external if missing -
-  Establishes directional pressure toward next RB - Enables early Market
-  Shift detection
+  Context   Active   Creating
+  --------- -------- ----------
+  UP        IL       IntH
+  DOWN      IH       IntL
 
-  EG is prerequisite, not entry.
+Rule:\
+High/Low that creates BO and produces new HH/LL becomes EH/EL.\
+Internal structure follows identical logic (IH/IL).
 
-  Break of Structure (BO)
+## 5. Structural Events
 
-  UP: Bullish close \> HH zone highest bearish High
+### Engulfing (EG)
 
-  DOWN: Bearish close \< LL zone lowest bullish Low
+**Bearish EG**\
+Body close \< bullish Low
 
-  BO Types
+**Bullish EG**\
+Body close \> bearish High
 
-  \| Type \| Meaning \| \|------\|----------\| \| BOS \| Continuation \|
-  \| MS \| Market Shift \|
+**EG Role** - Tests structural zones\
+- Creates new external if missing\
+- Establishes directional pressure toward next RB\
+- Enables early Market Shift detection
 
-  BO Strength Model:
+EG is a prerequisite, not an entry trigger.
 
-  Strength increases when: - Close depth extends beyond zone width -
-  Follow-through candle confirms momentum - Impulse range exceeds recent
-  average range
+### Break of Structure (BO)
 
-  ====================================================================
-  MODULE II - EXECUTION
-  ====================================================================
+**UP**\
+Bullish close \> HH zone highest bearish High
 
-  1\. CMP CONFIRMATION CHAIN
+**DOWN**\
+Bearish close \< LL zone lowest bullish Low
 
-  M1 BO -\> M5 EG -\> M5 BO -\> M15 EG -\> M15 BO -\> H1 EG -\> H1 BO
+  Type   Meaning
+  ------ --------------
+  BOS    Continuation
+  MS     Market Shift
 
-  Rules: 1. BO valid only if fresh EG exists one TF higher. 2. EG valid
-  only if BO occurs one TF lower. 3. No isolated signals.
-  ----------------------------------------------------------------------
+#### BO Strength Model
 
-2.  ROAD BLOCK (RB)
+Strength increases when: - Close depth extends beyond zone width\
+- Follow-through candle confirms momentum\
+- Impulse range exceeds recent average range
+
+------------------------------------------------------------------------
+
+# Module II --- Execution
+
+## 1. CMP Confirmation Chain
+
+M1 BO → M5 EG → M5 BO → M15 EG → M15 BO → H1 EG → H1 BO
+
+Rules: 1. BO valid only if fresh EG exists one TF higher\
+2. EG valid only if BO occurs one TF lower\
+3. No isolated signals
+
+## 2. Road Block (RB)
 
 RB = previous EH / EL / IH / IL
 
-Functions: - Reaction area - Target location - Potential reversal zone
+**Functions** - Reaction area\
+- Target location\
+- Potential reversal zone
 
-MTF Rule: Higher TF RB = Target Lower TF confirmation = Entry
+**MTF Principle** Higher TF RB = Target\
+Lower TF confirmation = Entry
 
 Maximum focus: 3 active RBs.
 
-  --------------------------------------------------------------------
-  3\. EXECUTION FLOW
-  --------------------------------------------------------------------
-  2\. STOP PLACEMENT
+## 3. Execution Flow
 
-  Stop must be: - Beyond EH/EL/IH/IL invalidation - Outside liquidity
-  sweep zone - Outside extended zone expansion
-  --------------------------------------------------------------------
+Identify HTF context\
+↓\
+Confirm direction\
+↓\
+Wait for price at valid S/R\
+↓\
+Wait for EG\
+↓\
+Confirm BO\
+↓\
+Execute\
+↓\
+Place stop beyond structural invalidation
 
-3.  TARGET LOGIC
+------------------------------------------------------------------------
 
-Primary target = Next higher timeframe RB. Secondary target = Extended
-zone objective.
+# Module III --- Risk Management
+
+## 1. Risk Philosophy
+
+Risk is structural.\
+Invalidation equals break of structural premise.
+
+## 2. Stop Placement
+
+Stop must be: - Beyond EH/EL/IH/IL invalidation\
+- Outside liquidity sweep zone\
+- Outside extended zone expansion
+
+## 3. Target Logic
+
+Primary target = Next higher timeframe RB\
+Secondary target = Extended zone objective
 
 Risk-to-Reward must justify structural clarity.
 
-  ----------------------------------------------------------------------
-  4\. TRADE LIFECYCLE
+## 4. Trade Lifecycle
 
-  Entry ↓ Structural confirmation ↓ Risk protected ↓ Approach next RB ↓
-  Exit or trail
+Entry\
+↓\
+Structural confirmation\
+↓\
+Risk protected\
+↓\
+Approach next RB\
+↓\
+Exit or trail
 
-  ====================================================================
-  MODULE IV - TRADER PSYCHOLOGY
-  ====================================================================
+------------------------------------------------------------------------
 
-  1\. CORE PRINCIPLES
+# Module IV --- Trader Psychology
 
-  1\. No prediction bias. 2. Wicks do not confirm structure. 3. Only
-  body close confirms structure. 4. Patience until full CMP chain forms.
-  5. No trades between zones without structural confirmation.
-  ----------------------------------------------------------------------
+## Core Principles
 
-2.  DISCIPLINE FLOW
+1.  No prediction bias\
+2.  Wicks do not confirm structure\
+3.  Only body close confirms structure\
+4.  Patience until full CMP chain forms\
+5.  No trades between zones without confirmation
 
-Context ↓ Location ↓ Structure ↓ Confirmation ↓ Execution ↓ Management
+## Discipline Flow
 
-==================================================================== CMP
-EDGE EQUATION
-====================================================================
+Context\
+↓\
+Location\
+↓\
+Structure\
+↓\
+Confirmation\
+↓\
+Execution\
+↓\
+Management
+
+------------------------------------------------------------------------
+
+## CMP Edge Equation
 
 Edge = HTF Location + Correct CMP Cycle Start + MTF Confirmation
 
-Without correct location, no edge exists. Without full chain
-confirmation, no execution.
+Without correct location, no edge exists.\
+Without full chain confirmation, no execution.
 
-====================================================================
+------------------------------------------------------------------------
 
-CMP Institutional Manual - Version 2.1
+CMP Institutional Manual --- Version 2.2
